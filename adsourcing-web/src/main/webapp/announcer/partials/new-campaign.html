@@ -1,3 +1,50 @@
 <div class="row">
-	New campaign !
+
+<div class="col-md-6">
+<h1>Create a campaign</h1>
+	<form role="form">
+		<div class="form-group">
+			<label for="title">Campaign Title *</label>
+			<input type="text" class="form-control" placeholder="Title..." ng-model="campaign.title" required />
+		</div>
+		<div class="form-group">
+			<label for="description">
+				Description * 
+				<i class="icon-question-sign clickable" 
+					ng-click="showDescriptionHelp = !showDescriptionHelp" 
+					title="Show documentation on writing a great description"
+				></i>
+			</label>
+			<span class="help-block" ng-class="{ hide: !showDescriptionHelp }">
+				The description must allow the designers to submit proposals 
+				that match precisely your needs. <br/>
+				You should specify, as needed:
+				<ul>
+					<li>What products you want to advertise, including <a href="#/catalog/links">catalog links</a></li>
+					<li>Which customers you target (age, gender, way of life, …)</li>
+					<li>What event the campaign is for (back to school, spring break, …)</li>
+					<li>What resources are allowed (any resource on your site, only catalog resources, …)</li>
+					<li>Any requirement you have on graphic design</li>
+					<li>Any particular (bonus) whishes</li>
+				</ul>
+			</span>
+			<textarea class="form-control" placeholder="Description..." ng-model="campaign.description" required></textarea>
+		</div>
+		<div class="form-group">
+			<label for="budget">Campaign Budget *</label>
+			<input type="number" class="form-control" placeholder="Budget..." ng-model="campaign.budget" required />
+		</div>
+		<div class="form-group">
+			<label for="tags">Tags</label>
+			<ul class="list-group">
+				<li ng-repeat="tag in campaign.tags" class="list-group-item">{{tag}} <i class="icon-remove pull-right clickable" ng-click="removeTag(tag)"></i></li>
+			</ul>
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="tagToAdd" placeholder="Add..." ng-keydown="addOnEnter($event, tagToAdd)" />
+				<span class="input-group-addon clickable" ng-click="addTag(tagToAdd)"><i class="icon-plus"></i></span>
+			</div>
+		</div>
+		<button ng-click="create()" type="submit" class="btn btn-primary">Create</button>
+	</form>
+</div>
 </div>

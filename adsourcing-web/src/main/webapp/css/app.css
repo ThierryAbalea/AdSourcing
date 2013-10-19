@@ -1,3 +1,5 @@
 /* app css stylesheet */
 
 .nav, .pagination, .carousel a { cursor: pointer; }
+
+.clickable { cursor: pointer; }
