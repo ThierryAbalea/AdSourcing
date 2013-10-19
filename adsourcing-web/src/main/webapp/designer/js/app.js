@@ -5,7 +5,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.filters',
-  'myApp.services',
+  'designerServices',
   'myApp.directives',
   'myApp.controllers',
   'ui.bootstrap'

@@ -12,12 +12,18 @@ angular.module('myApp.controllers', [])
     }]
 )
 .controller('AdsController', ['$scope',function($scope) {
-   $scope
-}])
-.controller('CampaignsController', [function() {
 
-      
 }])
+.controller('CampaignsController', ['$scope', 'Campaign',function($scope, Campaign) {
+    //$scope.campaigns = Campaign.query();
+
+        $scope.campaigns = [{
+            'name': 'big campaign',
+            'description': 'Be creative !',
+            'tags': ['shoes', 'girls', 'hello']
+        }
+        ];
+    }])
 .controller('ProfileController', [function() {
     
 }])
