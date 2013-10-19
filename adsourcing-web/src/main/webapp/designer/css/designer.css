@@ -1,3 +1,7 @@
 .designer .campaigns tr {
     cursor: pointer;
 }
+
+.tag {
+    margin-right: 10px;
+}
