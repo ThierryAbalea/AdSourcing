@@ -83,4 +83,13 @@ function($scope, $location, createCampaignService) {
 .controller('ProfileController', [function() {
     
 }])
+
+
+.controller('CampaignMonitoringController', ['$scope', function($scope) {
+        $scope.campaign = {
+            title: 'Zarenza autonm sales'
+        };
+    }])
+
+
 ;

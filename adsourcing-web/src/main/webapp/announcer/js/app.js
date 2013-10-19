@@ -15,6 +15,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/campaigns', {templateUrl: 'partials/campaigns.html', controller: 'CampaignsController'});
   $routeProvider.when('/campaigns/new', {templateUrl: 'partials/new-campaign.html', controller: 'NewCampaignController'});
   $routeProvider.when('/campaigns/:campaignId/dashboard', {templateUrl: 'partials/campaign-dashboard.html', controller: 'CampaignDashboardController'});
+  $routeProvider.when('/campaigns/:campaignId/monitoring', {templateUrl: 'partials/campaign-monitoring.html', controller: 'CampaignMonitoringController'});
   $routeProvider.when('/designers', {templateUrl: 'partials/designers.html', controller: 'DesignersController'});
   $routeProvider.when('/profile', {templateUrl: 'partials/profile.html', controller: 'ProfileController'});
   $routeProvider.otherwise({redirectTo: '/campaigns'});
