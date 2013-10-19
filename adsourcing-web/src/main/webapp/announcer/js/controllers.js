@@ -9,6 +9,9 @@ angular.module('myApp.controllers', [])
         $scope.isActive = function (viewLocation) { 
             return viewLocation === $location.path();
         };
+        $scope.go = function(viewLocation) {
+            $location.path(viewLocation);
+        };
     }]
 )
 .controller('CatalogController', [function() {
@@ -16,6 +19,9 @@ angular.module('myApp.controllers', [])
 }])
 .controller('CampaignsController', [function() {
       
+}])
+.controller('NewCampaignController', [function() {
+    
 }])
 .controller('DesignersController', [function() {
 
