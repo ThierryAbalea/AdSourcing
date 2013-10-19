@@ -9,20 +9,20 @@
 <link rel="stylesheet" href="../css/app.css" />
 </head>
 <body>
-	<nav class="navbar navbar-default" role="navigation">
-		<a class="navbar-brand active" href="#">AdSourcing</a>
+	<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarController">
+		<a class="navbar-brand" href="#">AdSourcing</a>
 		<ul class="nav navbar-nav">
-			<li><a href="#/campaigns" title="Manage your campaigns">Campaigns</a></li>
-			<li><a href="#/catalog" title="Manage your product catalog">Catalog</a></li>
-			<li><a href="#/designers"
+			<li ng-class="{ active: isActive('/campaigns') }"><a href="#/campaigns" title="Manage your campaigns">Campaigns</a></li>
+			<li ng-class="{ active: isActive('/catalog') }"><a href="#/catalog" title="Manage your product catalog">Catalog</a></li>
+			<li ng-class="{ active: isActive('/designers') }"><a href="#/designers"
 				title="Manage your favourite designers">Designers</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown">
+			<li ng-class="{dropdown: true, active: isActive('/profile') }">
 				<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> [[username]] <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="#/profile">Profile</a></li>
-					<li><a href="#/logout">Logout</a></li>
+					<li><a href="../">Logout</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -39,7 +39,7 @@
 		</div>
 	</div>
 
-	<script src="../webjars/angularjs/1.2.0-rc.3/angular.min.js"></script>
+	<script src="../webjars/angularjs/1.2.0-rc.3/angular.js"></script>
 	<script src="../webjars/angularjs/1.2.0-rc.3/angular-route.min.js"></script>
 	<script src="../webjars/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script>
 	<script src="js/app.js"></script>

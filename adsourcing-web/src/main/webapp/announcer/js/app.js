@@ -14,5 +14,6 @@ config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/catalog', {templateUrl: 'partials/catalog.html', controller: 'CatalogController'});
   $routeProvider.when('/campaigns', {templateUrl: 'partials/campaigns.html', controller: 'CampaignsController'});
   $routeProvider.when('/designers', {templateUrl: 'partials/designers.html', controller: 'DesignersController'});
+  $routeProvider.when('/profile', {templateUrl: 'partials/profile.html', controller: 'ProfileController'});
   $routeProvider.otherwise({redirectTo: '/campaigns'});
 }]);
