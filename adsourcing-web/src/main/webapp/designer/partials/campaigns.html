@@ -1,5 +1,5 @@
-<div class="container">
-    <table class="table table-hover">
+<div class="container designer">
+    <table class="table table-hover table-bordered campaigns">
         <thead>
             <tr>
                 <th>Name</th>
@@ -13,7 +13,15 @@
         </thead>
         <tbody>
             <tr ng-repeat="campaign in campaigns">
-                <td></td>
+                <td>{{campaign.name}}</td>
+                <td>{{campaign.advertiserName}}</td>
+                <td>{{campaign.description}}</td>
+                <td>
+                    <span ng-repeat="tag in campaign.tags" class="badge">{{tag}}</span>
+                </td>
+                <td>{{campaign.budget}}</td>
+                <td>{{campaign.startDate}}</td>
+                <td>{{campaign.endDate}}</td>
             </tr>
 
         </tbody>

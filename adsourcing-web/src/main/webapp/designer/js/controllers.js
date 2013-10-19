@@ -19,8 +19,15 @@ angular.module('myApp.controllers', [])
 
         $scope.campaigns = [{
             'name': 'big campaign',
+            'advertiserName': 'Sarenza',
             'description': 'Be creative !',
             'tags': ['shoes', 'girls', 'hello']
+        },
+        {
+            'name': 'big campaign',
+            'advertiserName': 'CDiscount',
+            'description': 'Be creative !',
+            'tags': ['tv', 'boys', 'world']
         }
         ];
     }])
