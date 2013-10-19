@@ -13,51 +13,11 @@
                     Palette imposée :
                 </div>
 
-                <div class="col-md-1 colorCell">
+                <div class="col-md-1 colorCell" ng-repeat="bcgColor in bcgColors">
                     <div class="colorPick">
-                        <span style="background-color: #ee7722"></span>
+                        <span style="background-color: {{bcgColor}}"></span>
                         <div class="colorIdSpace"></div>
-                        <div class="colorId">#ee7722</div>
-                    </div>
-                </div>
-
-                <div class="col-md-1 colorCell">
-                    <div class="colorPick">
-                        <span style="background-color: #ff5500"></span>
-                        <div class="colorIdSpace"></div>
-                        <div class="colorId">#ff5500</div>
-                    </div>
-                </div>
-
-                <div class="col-md-1 colorCell">
-                    <div class="colorPick">
-                        <span style="background-color: #eeeeee"></span>
-                        <div class="colorIdSpace"></div>
-                        <div class="colorId">#eeeeee</div>
-                    </div>
-                </div>
-
-                <div class="col-md-1 colorCell">
-                    <div class="colorPick">
-                        <span style="background-color: #eecccc"></span>
-                        <div class="colorIdSpace"></div>
-                        <div class="colorId">#eecccc</div>
-                    </div>
-                </div>
-
-                <div class="col-md-1 colorCell">
-                    <div class="colorPick">
-                        <span style="background-color: #997766"></span>
-                        <div class="colorIdSpace"></div>
-                        <div class="colorId">#997766</div>
-                    </div>
-                </div>
-
-                <div class="col-md-1 colorCell">
-                    <div class="colorPick">
-                        <span style="background-color: #dd7744"></span>
-                        <div class="colorIdSpace"></div>
-                        <div class="colorId">#dd7744</div>
+                        <div class="colorId">{{bcgColor}}</div>
                     </div>
                 </div>
             </div>
@@ -76,4 +36,6 @@
             </div>
         </div>
     </div>
+
+
 </div>
