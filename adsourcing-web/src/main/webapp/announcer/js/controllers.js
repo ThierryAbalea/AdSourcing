@@ -24,8 +24,8 @@ function($scope, $location, currentUserService) {
 .controller('CampaignsController', [function() {
       
 }])
-.controller('NewCampaignController', ['$scope', '$location', 'campaignService', 
-function($scope, $location, campaignService) {
+.controller('NewCampaignController', ['$scope', '$location', 'createCampaignService', 
+function($scope, $location, createCampaignService) {
     $scope.tagToAdd = "";
     $scope.campaign = {
         title: '',
@@ -60,7 +60,7 @@ function($scope, $location, campaignService) {
     };
     
     $scope.create = function() {
-        campaignService.create($scope.campaign)
+        createCampaignService.create($scope.campaign)
         .success(function(campaignId) {
             $location.path('/campaigns/' + campaignId + '/dashboard');
         })
@@ -69,6 +69,13 @@ function($scope, $location, campaignService) {
         })
         ;
     };
+}])
+.controller('CampaignDashboardController', ['$scope', '$routeParams', 'campaignService', function($scope, $routeParams, $campaignService) {
+    $scope.campaign = {};
+    
+    $campaignService.get({id: $routeParams.campaignId}, function (campaign) {
+        $scope.campaign = campaign;
+    });
 }])
 .controller('DesignersController', [function() {
 
