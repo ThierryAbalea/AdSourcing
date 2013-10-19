@@ -17,6 +17,8 @@ angular.module('myApp.controllers', [])
 .controller('CampaignsController', ['$scope', 'Campaign',function($scope, Campaign) {
     //$scope.campaigns = Campaign.query();
 
+        $scope.advertisers=['Sarenza', 'CDiscount'];
+
         $scope.campaigns = [{
             'name': 'big campaign',
             'advertiserName': 'Sarenza',
@@ -24,12 +26,19 @@ angular.module('myApp.controllers', [])
             'tags': ['shoes', 'girls', 'hello']
         },
         {
-            'name': 'big campaign',
+            'name': 'small campaign',
             'advertiserName': 'CDiscount',
             'description': 'Be creative !',
             'tags': ['tv', 'boys', 'world']
         }
         ];
+
+        $scope.campaignsFullText=function(campaign) {
+            var filter;
+            filter = !$scope.searchName || 0 === $scope.searchName.length; // empty search field
+            filter = filter || campaign.name.indexOf($scope.searchName) != -1;
+            return filter;
+        }
     }])
 .controller('ProfileController', [function() {
     
