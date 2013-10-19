@@ -16,7 +16,7 @@ import java.util.Set;
 
 import static com.google.common.collect.Sets.newHashSet;
 
-@Path("/api/designer")
+@Path("/designer")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class DesignerCampaignResource {

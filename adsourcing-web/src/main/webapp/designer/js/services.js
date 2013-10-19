@@ -8,7 +8,7 @@
 angular.module('designerServices', ['ngResource']).
   value('version', '0.1')
     .factory('Campaign', ['$resource', function($resource){
-        return $resource('desginer/campaign/active/:id', { 'id': '@id'}, {
+        return $resource('/api/designer/campaign/active:id', { 'id': '@id'}, {
 
         });
     }])
