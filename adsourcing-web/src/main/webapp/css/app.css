@@ -7,3 +7,38 @@
 .landing .well {
     margin-top: 100px;
 }
+
+.colorSelect {
+    height: 100px;
+}
+
+.colorCell {
+    height: 100px;
+    width: 35px;
+}
+
+.colorPick {
+    height: 100px;
+}
+
+.colorCell span {
+    height: 60px;
+    width: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.colorIdSpace {
+    height: 10px;
+}
+
+.colorId {
+    text-align: center;
+    vertical-align: text-bottom;
+    vertical-align: bottom;
+    height: 20px;
+}
