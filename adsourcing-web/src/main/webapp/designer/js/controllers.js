@@ -36,7 +36,8 @@ angular.module('myApp.controllers', [])
         $scope.campaignsFullText=function(campaign) {
             var filter;
             filter = !$scope.searchName || 0 === $scope.searchName.length; // empty search field
-            filter = filter || campaign.name.indexOf($scope.searchName) != -1;
+            filter = filter || campaign.title.indexOf($scope.searchName) != -1;
+            filter = filter || campaign.advertiserName.indexOf($scope.searchName) != -1;
             return filter;
         }
     }])
