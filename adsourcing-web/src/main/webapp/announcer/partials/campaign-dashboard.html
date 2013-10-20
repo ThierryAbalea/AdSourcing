@@ -8,11 +8,11 @@
 <div class="col-md-3">
 	<h2>Accepted</h2>
 	<ul class="nav nav-pills nav-stacked">
-		<li ng-repeat="sub in accepted"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+		<li ng-repeat="sub in accepted" ng-click="requalify('accepted', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
 	</ul>
 	<h2>Rejected</h2>
 	<ul class="nav nav-pills nav-stacked">
-		<li ng-repeat="sub in rejected"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+		<li ng-repeat="sub in rejected" ng-click="requalify('rejected', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
 	</ul>
 </div>
 <div class="col-md-6">
@@ -63,7 +63,7 @@
 <div class="col-md-3">
 	<h2>Incoming</h2>
 	<ul class="nav nav-pills nav-stacked">
-		<li ng-repeat="sub in incoming"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+		<li ng-repeat="sub in incoming" ng-click="requalify('incoming', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
 	</ul>
 </div>
 

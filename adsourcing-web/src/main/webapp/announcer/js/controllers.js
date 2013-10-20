@@ -119,7 +119,11 @@ function($scope, $location, createCampaignService) {
         return res;
     };
     $scope.halfStars = function(score) {
-        return new Array(Math.floor(score) === score ? 0 : 1);
+        if (Math.floor(score) === score) {
+            return [];
+        } else {
+            return [0];
+        }
     };
     
     $scope.accept = function () {
@@ -133,6 +137,11 @@ function($scope, $location, createCampaignService) {
     $scope.later = function () {
         $scope.incoming.push($scope.current);
         $scope.current = $scope.incoming.shift();
+    };
+    $scope.requalify = function(scope, index) {
+        var current = $scope.current;
+        $scope.current = $scope[scope].splice(index, 1).pop();
+        $scope.incoming.unshift(current);
     };
 }])
 .controller('DesignersController', [function() {
