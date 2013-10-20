@@ -157,29 +157,34 @@ function($scope, $location, createCampaignService) {
             title: 'Sarenza autumn sales'
         };
 
-         var data = {
-            labels : ["Jan","Feb","Mar","Apr","May","Jun","Jul"],
+         var dataCTR = {
+            labels : ["Mon 13", "Tue 14","Wed 15","Thu 16","Fri 17","Sat 18","Sun 19"],
             datasets : [
             {
             fillColor : "#007fff",
             strokeColor : "#00ffff",
             pointColor : "#00ffff",
             pointStrokeColor : "#0000ff",
-            data : [65,59,90,150,56,55,40]
-            },
-            {
-            fillColor : "rgba(151,187,205,0.5)",
-            strokeColor : "rgba(151,187,205,1)",
-            pointColor : "rgba(151,187,205,1)",
-            pointStrokeColor : "#fff",
-            data : [28,48,40,19,96,27,100]
+            data : [2345,1860,1950,2100,1700,2590,2865]
             }
             ]
             };
-
-            var ctx = document.getElementById("myChart").getContext("2d");
-            var myNewChart = new Chart(ctx).Line(data);
-
+          var dataCR = {
+             labels : ["Mon 13", "Tue 14","Wed 15","Thu 16","Fri 17","Sat 18","Sun 19"],
+             datasets : [
+             {
+             fillColor : "rgba(151,187,205,0.5)",
+             strokeColor : "rgba(151,187,205,1)",
+             pointColor : "rgba(151,187,205,1)",
+             pointStrokeColor : "#fff",
+             data : [256,214,230,210,200,450,658]
+             }
+             ]
+             };
+            var ctxCTR = document.getElementById("myChartCTR").getContext("2d");
+            var ctxCR = document.getElementById("myChartCR").getContext("2d");
+            var myNewChartCTR = new Chart(ctxCTR).Line(dataCTR);
+            var myNewChartCR = new Chart(ctxCR).Line(dataCR);
     }])
 
 ;

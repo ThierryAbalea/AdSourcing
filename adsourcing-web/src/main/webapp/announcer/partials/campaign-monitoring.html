@@ -1,7 +1,13 @@
 <div class="row">
 
-    <p>That's where you monitor your campaign <h3>{{campaign.title}}</h3> goes.</p>
+    <p><h3> Trends of the campaign "{{campaign.title}}"</h3>.</p>
 
 
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <canvas id="myChartCTR" width="400" height="400"></canvas>
+    <br/>
+    <div style="width:400px; text-align:center">{{campaign.title}}: CTR</div>
+    <br/>
+    <canvas id="myChartCR" width="400" height="400"></canvas>
+    <br/>
+    <div style="width:400px; text-align:center">{{campaign.title}}: CR</div>
 </div>
