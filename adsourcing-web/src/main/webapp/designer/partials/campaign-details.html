@@ -37,5 +37,15 @@
         </div>
     </div>
 
+    <div class="row">
+       <div class="col-md-1 " ng-repeat="visuel in visuelsDisplayed.slice(0, nbAffichage)">
+           <img src="{{visuel}}">
+       </div>
+   </div>
+    <div class="row animated fadeInDown" ng-class="{hide: showMoreButton()}">
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default" ng-click="nbAffichage = nbAffichage + 48">more visuals</a>
+        </div>
+    </div>
 
-</div>
+   </div>
