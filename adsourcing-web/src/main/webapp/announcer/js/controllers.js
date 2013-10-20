@@ -70,12 +70,70 @@ function($scope, $location, createCampaignService) {
         ;
     };
 }])
-.controller('CampaignDashboardController', ['$scope', '$routeParams', 'campaignService', function($scope, $routeParams, $campaignService) {
-    $scope.campaign = {};
+.controller('CampaignDashboardController', ['$scope', function($scope) {
+    $scope.incoming = [
+        {
+            user: {
+                name: 'Elena',
+                perf: 2.5,
+                reco: 2
+            },
+            visual: '../img/bandeau-sarenza-1.jpg',
+            targeting: ['Women', 'Aged 30-50', 'From Any City']
+        },
+        { user: {name: 'Stephan'} },
+        { user: {name: 'Morgane'} },
+        { user: {name: 'David'} },
+        { user: {name: 'TheDude'} },
+        { user: {name: 'John'} },
+        { user: {name: 'Tim'} },
+    ];
+    $scope.accepted = [
+        { user: {name: 'Simon'} },
+        { user: {name: 'Manu'} },
+        { user: {name: 'Edith'} },
+    ];
+    $scope.rejected = [ { user: {name: 'Mary'} } ];
+    $scope.current = {
+        user: {
+            name: 'David',
+            perf: 2,
+            reco: 3.5
+        },
+        visual: '../img/bandeau-sarenza-0.jpg',
+        targeting: ['Women', 'Aged 20-40', 'From Paris (incl. suburbs)']
+    };
     
-    $campaignService.get({id: $routeParams.campaignId}, function (campaign) {
-        $scope.campaign = campaign;
-    });
+    $scope.fullStars = function(score) {
+        var res = [];
+        for (var i = 0; i < Math.floor(score); i++) {
+            res[i] = i;
+        }
+        return res;
+    };
+    $scope.emptyStars = function(score) {
+        var res = [];
+        for (var i = 0; i < Math.floor(4- score); i++) {
+            res[i] = i;
+        }
+        return res;
+    };
+    $scope.halfStars = function(score) {
+        return new Array(Math.floor(score) === score ? 0 : 1);
+    };
+    
+    $scope.accept = function () {
+        $scope.accepted.unshift($scope.current);
+        $scope.current = $scope.incoming.shift();
+    };
+    $scope.reject = function () {
+        $scope.rejected.unshift($scope.current);
+        $scope.current = $scope.incoming.shift();
+    };
+    $scope.later = function () {
+        $scope.incoming.push($scope.current);
+        $scope.current = $scope.incoming.shift();
+    };
 }])
 .controller('DesignersController', [function() {
 

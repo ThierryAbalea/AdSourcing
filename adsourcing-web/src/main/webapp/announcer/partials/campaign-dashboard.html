@@ -4,49 +4,67 @@
 <div class="row">
     <h1><img src="../img/sarenza-logo-web.png"/> Nouvelle collection hiver 2013</h1></div>
 </div>
-<h2>Qualify Subscription</h2>
-<span class="help-text">Do you want to use this visual ?</span>
-</div>
 <div class="row">
-<div class="col-md-4 col-md-offset-4 center-content">
-	<button type="button" class="btn btn-info">Accept</button>
-	<button type="button" class="btn btn-default">Later</button>
-	<button type="button" class="btn btn-danger">Reject</button>
-</div>
-</div>
-<div class="row">
-<div class="col-md-5 center-content">
-<img ng-src="../img/bandeau-sarenza-0.jpg" />
-</div>
-<div class="col-md-4">
-<h3>Targeting</h3>
-<ul>
-	<li>Women</li>
-	<li>Aged 20-40</li>
-	<li>From Paris (incl. suburbs)</li>
-</ul>
-</div>
 <div class="col-md-3">
-<h3><i class="icon-user"></i> David</h3>
-<ul>
-	<li><i class="icon-bar-chart"></i> Perf <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i></li>
-	<li><i class="icon-thumbs-up"></i> Recommended <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half-full"></i></li>
-</ul>
+	<h2>Accepted</h2>
+	<ul class="nav nav-pills nav-stacked">
+		<li ng-repeat="sub in accepted"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+	</ul>
+	<h2>Rejected</h2>
+	<ul class="nav nav-pills nav-stacked">
+		<li ng-repeat="sub in rejected"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+	</ul>
 </div>
+<div class="col-md-6">
+	<h2>
+		Qualify
+		<ul class="nav nav-pills pull-right"><li><a><i class="icon-user"></i> {{current.user.name}}</a></li></ul>
+	</h2>
+	<span class="help-text">Do you want to use this visual ?</span>
+	<div class="row">
+		<div class="col-md-12">
+		<div class="btn-group btn-group-justified">
+			<a class="btn btn-info" ng-click="accept()">Accept</a>
+			<a class="btn btn-default" ng-click="later()">Later</a>
+			<a class="btn btn-danger" ng-click="reject()">Reject</a>
+		</div>
+		</div>
+	</div>
+	<div class="row center-content">
+		<div class="col-md-12">
+		<img ng-src="{{current.visual}}" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h3>Targeting</h3>
+			<ul>
+				<li ng-repeat="target in current.targeting">{{target}}</li>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<h3><i class="icon-user"></i> {{current.user.name}}</h3>
+			<ul>
+				<li><i class="icon-bar-chart"></i> Perf 
+					<i class="icon-star" ng-repeat="i in fullStars(current.user.perf)"></i
+					><i class="icon-star-half-full" ng-repeat="i in halfStars(current.user.perf)"></i
+					><i class="icon-star-empty" ng-repeat="i in emptyStars(current.user.perf)"></i>
+				</li>
+				<li><i class="icon-thumbs-up"></i> Recommended 
+					<i class="icon-star" ng-repeat="i in fullStars(current.user.reco)"></i
+					><i class="icon-star-half-full" ng-repeat="i in halfStars(current.user.reco)"></i
+					><i class="icon-star-empty" ng-repeat="i in emptyStars(current.user.reco)"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 
-<div class="row">
-<h2>Incoming Submissions</h2>
-<ul class="nav nav-pills">
-<li><a><i class="icon-user"></i> Elena</a></li>
-<li><a><i class="icon-user"></i> Stephan</a></li>
-<li><a><i class="icon-user"></i> Morgane</a></li>
-<li><a><i class="icon-user"></i> David</a></li>
-<li><a><i class="icon-user"></i> TheDude</a></li>
-<li><a><i class="icon-user"></i> John</a></li>
-<li><a><i class="icon-user"></i> Tim</a></li>
-</ul>
+<div class="col-md-3">
+	<h2>Incoming</h2>
+	<ul class="nav nav-pills nav-stacked">
+		<li ng-repeat="sub in incoming"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+	</ul>
 </div>
 
-</div>
 </div>
