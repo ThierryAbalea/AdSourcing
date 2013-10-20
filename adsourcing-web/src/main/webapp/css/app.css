@@ -4,6 +4,8 @@
 
 .clickable { cursor: pointer; }
 
+.center-content { text-align: center; }
+
 .landing .well {
     margin-top: 100px;
 }

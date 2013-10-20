@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <title>AdSourcing</title>
-<link rel="stylesheet" href="../webjars/bootstrap/3.0.0/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../webjars/font-awesome/3.2.1/css/font-awesome.min.css" />
+<link rel="stylesheet/less" type="text/css" href="css/bootstrap/bootstrap.less" />
 <link rel="stylesheet" href="css/announcer.css" />
 <link rel="stylesheet" href="../css/app.css" />
 </head>
-<body>
-	<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarController">
+<body style="padding-top: 70px;">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavbarController">
 		<a class="navbar-brand" href="#">AdSourcing</a>
 		<ul class="nav navbar-nav">
 			<li ng-class="{ active: isActive('/campaigns') }"><a href="#/campaigns" title="Manage your campaigns">Campaigns</a></li>
@@ -39,6 +39,7 @@
 		</div>
 	</div>
 
+	<script src="../webjars/less/1.4.2/less.min.js" type="text/javascript"></script>
 	<script src="../webjars/angularjs/1.2.0-rc.3/angular.js"></script>
 	<script src="../webjars/angularjs/1.2.0-rc.3/angular-route.min.js"></script>
 	<script src="../webjars/angularjs/1.2.0-rc.3/angular-resource.min.js"></script>
