@@ -5,16 +5,15 @@
     <h1><img src="../img/logo_cdiscount.png"/> All Year 2014 Mega Campaign</h1></div>
 </div>
 <div class="row">
+
 <div class="col-md-3">
-	<h2>Accepted</h2>
+	<h2>Incoming</h2>
 	<ul class="nav nav-pills nav-stacked">
-		<li ng-repeat="sub in accepted" ng-click="requalify('accepted', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+		<li ng-repeat="sub in incoming" ng-click="requalify('incoming', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
 	</ul>
-	<h2>Rejected</h2>
-	<ul class="nav nav-pills nav-stacked">
-		<li ng-repeat="sub in rejected" ng-click="requalify('rejected', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
-	</ul>
+	<span class="help-text" ng-class="{ hide: incoming.length != 0 }">No incoming right now</span>
 </div>
+
 <div class="col-md-6">
 	<h2>
 		Qualify
@@ -64,11 +63,14 @@
 </div>
 
 <div class="col-md-3">
-	<h2>Incoming</h2>
+	<h2>Accepted</h2>
 	<ul class="nav nav-pills nav-stacked">
-		<li ng-repeat="sub in incoming" ng-click="requalify('incoming', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+		<li ng-repeat="sub in accepted" ng-click="requalify('accepted', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
 	</ul>
-	<span class="help-text" ng-class="{ hide: incoming.length != 0 }">No incoming right now</span>
+	<h2>Rejected</h2>
+	<ul class="nav nav-pills nav-stacked">
+		<li ng-repeat="sub in rejected" ng-click="requalify('rejected', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+	</ul>
 </div>
 
 </div>
