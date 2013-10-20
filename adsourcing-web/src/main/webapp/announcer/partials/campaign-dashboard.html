@@ -2,9 +2,66 @@
 <div class="container">
 
 <div class="row">
-    <h1><img src="../img/sarenza-logo-web.png"/> Nouvelle collection hiver 2013</h1></div>
+    <h1><img src="../img/logo_cdiscount.png"/> All Year 2014 Mega Campaign</h1></div>
 </div>
 <div class="row">
+
+<div class="col-md-3">
+	<h2>Incoming</h2>
+	<ul class="nav nav-pills nav-stacked">
+		<li ng-repeat="sub in incoming" ng-click="requalify('incoming', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
+	</ul>
+	<span class="help-text" ng-class="{ hide: incoming.length != 0 }">No incoming right now</span>
+</div>
+
+<div class="col-md-6">
+	<h2>
+		Qualify
+		<ul class="nav nav-pills pull-right" ng-class="{ hide: !current }"><li><a><i class="icon-user"></i> {{current.user.name}}</a></li></ul>
+	</h2>
+	<div ng-class="{ hide: !current }">
+		<span class="help-text">Do you want to use this visual ?</span>
+		<div class="row">
+			<div class="col-md-12">
+			<div class="btn-group btn-group-justified">
+				<a class="btn btn-info" ng-click="accept()">Accept</a>
+				<a class="btn btn-default" ng-click="later()">Later</a>
+				<a class="btn btn-danger" ng-click="reject()">Reject</a>
+			</div>
+			</div>
+		</div>
+		<div class="row center-content">
+			<div class="col-md-12">
+			<img ng-src="{{current.visual}}" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Targeting</h3>
+				<ul>
+					<li ng-repeat="target in current.targeting">{{target}}</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<h3><i class="icon-user"></i> {{current.user.name}}</h3>
+				<ul>
+					<li><i class="icon-bar-chart"></i> Perf 
+						<i class="icon-star" ng-repeat="i in fullStars(current.user.perf)"></i
+						><i class="icon-star-half-full" ng-repeat="i in halfStars(current.user.perf)"></i
+						><i class="icon-star-empty" ng-repeat="i in emptyStars(current.user.perf)"></i>
+					</li>
+					<li><i class="icon-thumbs-up"></i> Recommended 
+						<i class="icon-star" ng-repeat="i in fullStars(current.user.reco)"></i
+						><i class="icon-star-half-full" ng-repeat="i in halfStars(current.user.reco)"></i
+						><i class="icon-star-empty" ng-repeat="i in emptyStars(current.user.reco)"></i>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<span class="help-text" ng-class="{ hide: current }">No submissions to qualify right now</span>
+</div>
+
 <div class="col-md-3">
 	<h2>Accepted</h2>
 	<ul class="nav nav-pills nav-stacked">
@@ -13,57 +70,6 @@
 	<h2>Rejected</h2>
 	<ul class="nav nav-pills nav-stacked">
 		<li ng-repeat="sub in rejected" ng-click="requalify('rejected', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
-	</ul>
-</div>
-<div class="col-md-6">
-	<h2>
-		Qualify
-		<ul class="nav nav-pills pull-right"><li><a><i class="icon-user"></i> {{current.user.name}}</a></li></ul>
-	</h2>
-	<span class="help-text">Do you want to use this visual ?</span>
-	<div class="row">
-		<div class="col-md-12">
-		<div class="btn-group btn-group-justified">
-			<a class="btn btn-info" ng-click="accept()">Accept</a>
-			<a class="btn btn-default" ng-click="later()">Later</a>
-			<a class="btn btn-danger" ng-click="reject()">Reject</a>
-		</div>
-		</div>
-	</div>
-	<div class="row center-content">
-		<div class="col-md-12">
-		<img ng-src="{{current.visual}}" />
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<h3>Targeting</h3>
-			<ul>
-				<li ng-repeat="target in current.targeting">{{target}}</li>
-			</ul>
-		</div>
-		<div class="col-md-6">
-			<h3><i class="icon-user"></i> {{current.user.name}}</h3>
-			<ul>
-				<li><i class="icon-bar-chart"></i> Perf 
-					<i class="icon-star" ng-repeat="i in fullStars(current.user.perf)"></i
-					><i class="icon-star-half-full" ng-repeat="i in halfStars(current.user.perf)"></i
-					><i class="icon-star-empty" ng-repeat="i in emptyStars(current.user.perf)"></i>
-				</li>
-				<li><i class="icon-thumbs-up"></i> Recommended 
-					<i class="icon-star" ng-repeat="i in fullStars(current.user.reco)"></i
-					><i class="icon-star-half-full" ng-repeat="i in halfStars(current.user.reco)"></i
-					><i class="icon-star-empty" ng-repeat="i in emptyStars(current.user.reco)"></i>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
-
-<div class="col-md-3">
-	<h2>Incoming</h2>
-	<ul class="nav nav-pills nav-stacked">
-		<li ng-repeat="sub in incoming" ng-click="requalify('incoming', $index)"><a><i class="icon-user"></i> {{sub.user.name}}</a></li>
 	</ul>
 </div>
 

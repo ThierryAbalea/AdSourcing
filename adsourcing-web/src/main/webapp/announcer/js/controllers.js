@@ -78,30 +78,38 @@ function($scope, $location, createCampaignService) {
                 perf: 2.5,
                 reco: 2
             },
-            visual: '../img/bandeau-sarenza-1.jpg',
-            targeting: ['Women', 'Aged 30-50', 'From Any City']
+            visual: '../img/cdiscount-1.jpg',
+            targeting: ['Men & Women', 'Aged 15-25', 'From Cities']
         },
-        { user: {name: 'Stephan'} },
-        { user: {name: 'Morgane'} },
-        { user: {name: 'David'} },
-        { user: {name: 'TheDude'} },
-        { user: {name: 'John'} },
-        { user: {name: 'Tim'} },
+        {
+            user: {
+                name: 'Stéphane',
+                perf: 1.5,
+                reco: 3
+            },
+            visual: '../img/cdiscount-2.jpg',
+            targeting: ['Men', 'Aged 25-35', 'From Everywhere']
+        },
+        {
+            user: {
+                name: 'Morgan',
+                perf: 2,
+                reco: 4
+            },
+            visual: '../img/cdiscount-3.jpg',
+            targeting: ['Men', 'Aged 15-35', 'From Cities']
+        },
     ];
-    $scope.accepted = [
-        { user: {name: 'Simon'} },
-        { user: {name: 'Manu'} },
-        { user: {name: 'Edith'} },
-    ];
-    $scope.rejected = [ { user: {name: 'Mary'} } ];
+    $scope.accepted = [];
+    $scope.rejected = [];
     $scope.current = {
         user: {
             name: 'David',
             perf: 2,
             reco: 3.5
         },
-        visual: '../img/bandeau-sarenza-0.jpg',
-        targeting: ['Women', 'Aged 20-40', 'From Paris (incl. suburbs)']
+        visual: '../img/cdiscount-0.jpg',
+        targeting: ['Men & Women', 'Aged 18-50', 'From Cities and Suburbs']
     };
     
     $scope.fullStars = function(score) {
@@ -141,7 +149,10 @@ function($scope, $location, createCampaignService) {
     $scope.requalify = function(scope, index) {
         var current = $scope.current;
         $scope.current = $scope[scope].splice(index, 1).pop();
-        $scope.incoming.unshift(current);
+        
+        if (current) {
+            $scope.incoming.unshift(current);
+        }
     };
 }])
 .controller('DesignersController', [function() {

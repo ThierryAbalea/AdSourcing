@@ -5,13 +5,14 @@
 <title>AdSourcing</title>
 <link rel="stylesheet" href="../webjars/bootstrap/3.0.0/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../webjars/font-awesome/3.2.1/css/font-awesome.min.css" />
-<link rel="stylesheet" href="css/designer.css" />
-<link rel="stylesheet" href="../css/app.css" />
 <link rel="stylesheet" href="../css/animate.css" />
+<link rel="stylesheet" href="../css/flat-ui.css" />
+<link rel="stylesheet" href="../css/app.css" />
+<link rel="stylesheet" href="css/designer.css" />
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarController">
-		<a class="navbar-brand" href="#">AdSourcing</a>
+        <a class="navbar-brand" href="../"><img src="../img/logo.png" /></a>
 		<ul class="nav navbar-nav">
 			<li ng-class="{ active: isActive('/campaigns') }">
                 <a href="#/campaigns" title="See actived campaigns">Campaigns</a>
@@ -22,7 +23,7 @@
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li ng-class="{dropdown: true, active: isActive('/profile') }">
-				<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> [[Great Designer]] <b class="caret"></b></a>
+				<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> David <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="#/profile">Profile</a></li>
 					<li><a href="../">Logout</a></li>
@@ -30,7 +31,6 @@
 			</li>
 		</ul>
 	</nav>
-
 	<div ng-view></div>
 
 	<script src="../webjars/angularjs/1.2.0-rc.3/angular.js"></script>

@@ -26,7 +26,7 @@ angular.module('myApp.services', ['ngResource'])
 .factory('currentUserService', ['$resource', function($resource) {
     return {
         get: function (cb) {
-            cb({id:'plop', name:'Selena @ Sarenza'});
+            cb({id:'plop', name:'Xavier @ CDiscount'});
         }
     };
     //return $resource('../api/user/me');
