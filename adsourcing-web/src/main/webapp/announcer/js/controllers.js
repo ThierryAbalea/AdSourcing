@@ -99,17 +99,9 @@ function($scope, $location, createCampaignService) {
             visual: '../img/cdiscount-3.jpg',
             targeting: ['Men', 'Aged 15-35', 'From Cities']
         },
-        { user: {name: 'David'} },
-        { user: {name: 'TheDude'} },
-        { user: {name: 'John'} },
-        { user: {name: 'Tim'} },
     ];
-    $scope.accepted = [
-        { user: {name: 'Simon'} },
-        { user: {name: 'Manu'} },
-        { user: {name: 'Edith'} },
-    ];
-    $scope.rejected = [ { user: {name: 'Mary'} } ];
+    $scope.accepted = [];
+    $scope.rejected = [];
     $scope.current = {
         user: {
             name: 'David',
@@ -157,7 +149,10 @@ function($scope, $location, createCampaignService) {
     $scope.requalify = function(scope, index) {
         var current = $scope.current;
         $scope.current = $scope[scope].splice(index, 1).pop();
-        $scope.incoming.unshift(current);
+        
+        if (current) {
+            $scope.incoming.unshift(current);
+        }
     };
 }])
 .controller('DesignersController', [function() {
