@@ -18,7 +18,7 @@
     <div class="tile sect">
         <div class="row colorSelect">
             <div class="col-md-4">
-                <img src="../../images/icons/svg/clipboard.svg" style="height: 70px">
+                <img src="../images/icons/svg/clipboard.svg" style="height: 70px">
                 Palette imposée :
             </div>
 
@@ -54,29 +54,47 @@
         <div class="panel-body">
             <form class="form-horizontal" role="form">
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">Titre :</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-2 control-label">Description :</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="col-lg-2 control-label"></label>
                     <div class="col-lg-10">
                         <input type="file" id="exampleInputFile">
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Gender :</label>
+                    <div class="col-lg-10">
+                    	<div class="btn-group">
+                        	<button type="button" class="btn btn-default" ng-class="{ active: male }" ng-click="male = !male">Male</button>
+                        	<button type="button" class="btn btn-default" ng-class="{ active: female }" ng-click="female = !female">Female</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Age range :</label>
+                    <div class="col-lg-1">
+                        <input type="text" class="form-control"></input>
+                    </div>-
+                    <div class="col-lg-1">
+                        <input type="text" class="form-control"></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Lives in :</label>
+                    <div class="col-lg-10">
+                    	<div class="btn-group">
+                        	<button type="button" class="btn btn-default" ng-class="{ active: city }" ng-click="city = !city">Cities</button>
+                        	<button type="button" class="btn btn-default" ng-class="{ active: suburb }" ng-click="suburb = !suburb">Suburbs</button>
+                        	<button type="button" class="btn btn-default" ng-class="{ active: country }" ng-click="country = !country">Country</button>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button type="submit" class="btn btn-default">Envoyer</button>
+                        <button type="submit" class="btn btn-default" ng-click="sent = true">Envoyer</button>
                     </div>
                 </div>
+                
+                <span class="help-text" ng-class="{hide:!sent}">Your ad has been subscribed !</span>
             </form>
         </div>
     </div>
