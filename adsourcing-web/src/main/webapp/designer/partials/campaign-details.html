@@ -1,8 +1,14 @@
 <div class="container campaign">
 
     <div class="tile sect">
-            <img src="../img/sarenza_logo.jpg"/>
-            <h3>{{campaign.title}}</h3>
+        <div class="row">
+            <div class="col-md-4 advertiserLogo">
+                <img src="../img/sarenza_logo.jpg"/>
+            </div>
+            <div class="col-md-8">
+                <h4>{{campaign.title}}</h4>
+            </div>
+        </div>
     </div>
 
     <div class="tile sect">
@@ -26,17 +32,50 @@
         </div>
     </div>
 
-    <div class="row animated fadeInUp" ng-repeat="row in visuelsDisplayed.slice(0,nbLigne)">
-       <div class="col-md-2 " ng-repeat="cell in row">
-           <div>
-                <img class="" ng-src="{{cell}}">
+    <div class="tile sect">
+        <div class="row animated fadeInUp visualRow" ng-repeat="row in visuelsDisplayed.slice(0,nbLigne)">
+           <div class="col-md-2 visual" ng-repeat="cell in row">
+                <img class="visualImg" ng-src="{{cell}}">
            </div>
        </div>
-   </div>
-    <div class="row" ng-class="{hide: showMoreButton()}">
-        <div class="btn-group btn-group-justified">
-            <a class="btn btn-default" ng-click="nbLigne = nbLigne + 2">more visuals</a>
+
+        <div class="row moreVisual" ng-class="{hide: showMoreButton()}">
+            <div class="col-md-8 col-md-offset-1">
+                <div class="btn-group btn-group-justified">
+                    <a class="btn btn-default" ng-click="nbLigne = nbLigne + 2">Plus de visuels</a>
+                </div>
+            </div>
+            <span class="glyphicon glyphicon-download-alt clickable" > Télécharger</span>
         </div>
+    </div>
+
+    <div class="tile sect upload">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Titre :</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">Description :</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label"></label>
+                <div class="col-lg-10">
+                    <input type="file" id="exampleInputFile">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <button type="submit" class="btn btn-default">Envoyer</button>
+                </div>
+            </div>
+        </form>
     </div>
 
    </div>

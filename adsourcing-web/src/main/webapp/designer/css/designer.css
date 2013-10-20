@@ -16,3 +16,27 @@ body {
 .sect {
     margin-bottom: 20px;
 }
+
+.advertiserLogo img {
+    height: 100px;
+}
+
+.visual {
+
+}
+
+.visualImg {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
+}
+
+.visualRow {
+    margin-bottom: 10px;
+}
+
+.moreVisual {
+    margin-top: 30px;
+}
