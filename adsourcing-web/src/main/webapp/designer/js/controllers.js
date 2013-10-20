@@ -284,8 +284,9 @@ angular.module('myApp.controllers', [])
     ];
 
     $scope.nbLigne = 3;
+    var nbVisualsPerLine = 6;
 
-    var nbLigneTotal = visuels.length / 12;
+    var nbLigneTotal = visuels.length / nbVisualsPerLine;
 
     $scope.showMoreButton = function() {
         return $scope.nbLigne >= nbLigneTotal;
@@ -293,13 +294,8 @@ angular.module('myApp.controllers', [])
 
     var v = [];
     while(visuels.length > 0) {
-        v.push(visuels.splice(0,12));
+        v.push(visuels.splice(0, nbVisualsPerLine));
     }
-    console.log(v[0]);
-
-
-
-
     $scope.visuelsDisplayed=v;
 
 }])

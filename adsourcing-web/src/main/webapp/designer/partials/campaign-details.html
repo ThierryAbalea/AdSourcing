@@ -38,8 +38,10 @@
     </div>
 
     <div class="row animated fadeInUp" ng-repeat="row in visuelsDisplayed.slice(0,nbLigne)">
-       <div class="col-md-1 " ng-repeat="cell in row">
-           <img ng-src="{{cell}}">
+       <div class="col-md-2 " ng-repeat="cell in row">
+           <div>
+                <img class="" ng-src="{{cell}}">
+           </div>
        </div>
    </div>
     <div class="row" ng-class="{hide: showMoreButton()}">
