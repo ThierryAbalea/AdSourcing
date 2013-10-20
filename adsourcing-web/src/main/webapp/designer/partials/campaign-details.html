@@ -37,14 +37,14 @@
         </div>
     </div>
 
-    <div class="row">
-       <div class="col-md-1 " ng-repeat="visuel in visuelsDisplayed.slice(0, nbAffichage)">
-           <img src="{{visuel}}">
+    <div class="row animated fadeInUp" ng-repeat="row in visuelsDisplayed.slice(0,nbLigne)">
+       <div class="col-md-1 " ng-repeat="cell in row">
+           <img ng-src="{{cell}}">
        </div>
    </div>
-    <div class="row animated fadeInDown" ng-class="{hide: showMoreButton()}">
+    <div class="row" ng-class="{hide: showMoreButton()}">
         <div class="btn-group btn-group-justified">
-            <a class="btn btn-default" ng-click="nbAffichage = nbAffichage + 48">more visuals</a>
+            <a class="btn btn-default" ng-click="nbLigne = nbLigne + 2">more visuals</a>
         </div>
     </div>
 
