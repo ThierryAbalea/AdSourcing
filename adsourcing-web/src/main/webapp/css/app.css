@@ -37,6 +37,7 @@
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
+    border: 1px solid #C0C0C0;
 }
 
 .colorIdSpace {
