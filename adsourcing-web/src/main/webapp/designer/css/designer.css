@@ -40,3 +40,11 @@ body {
 .moreVisual {
     margin-top: 30px;
 }
+
+button {
+    background-color: #16a085;
+}
+
+.btn {
+    background-color: #16a085;
+}
