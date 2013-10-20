@@ -10,7 +10,7 @@
 	padding-top: 7px;
 	padding-bottom: 0px;
 }
-.navbar-brand img {height:50px;};
+.navbar-brand img {height:50px;}
 
 .landing .well {
     margin-top: 100px;
@@ -37,6 +37,7 @@
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
+    border: 1px solid #C0C0C0;
 }
 
 .colorIdSpace {

@@ -165,9 +165,33 @@ function($scope, $location, createCampaignService) {
 
 .controller('CampaignMonitoringController', ['$scope', function($scope) {
         $scope.campaign = {
-            title: 'Zarenza autonm sales'
+            title: 'Sarenza autumn sales'
         };
+
+         var data = {
+            labels : ["Jan","Feb","Mar","Apr","May","Jun","Jul"],
+            datasets : [
+            {
+            fillColor : "#007fff",
+            strokeColor : "#00ffff",
+            pointColor : "#00ffff",
+            pointStrokeColor : "#0000ff",
+            data : [65,59,90,150,56,55,40]
+            },
+            {
+            fillColor : "rgba(151,187,205,0.5)",
+            strokeColor : "rgba(151,187,205,1)",
+            pointColor : "rgba(151,187,205,1)",
+            pointStrokeColor : "#fff",
+            data : [28,48,40,19,96,27,100]
+            }
+            ]
+            };
+
+            var ctx = document.getElementById("myChart").getContext("2d");
+            var myNewChart = new Chart(ctx).Line(data);
+
     }])
 
-
 ;
+
